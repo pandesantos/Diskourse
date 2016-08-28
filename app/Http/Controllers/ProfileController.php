@@ -57,9 +57,5 @@ class ProfileController extends Controller {
 
 	}
 
-	public function getResources() {
-
-		return view('profile.resources');
-	}
 	
 }

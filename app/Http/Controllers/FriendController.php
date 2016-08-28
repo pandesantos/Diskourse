@@ -47,7 +47,7 @@ class FriendController extends Controller {
 		Auth::user()->addFriend($user);
 		return redirect()
 		->route('profile.index', ['username'=>$username])
-		->with('info', 'Request sent!');
+		->with('info', 'Following');
 	}
 
 	public function getAccept($username){
@@ -68,7 +68,7 @@ class FriendController extends Controller {
 
 		return redirect()
 		->route('profile.index', ['username'=>$username])
-		->with('info', 'Added to your list.');
+		->with('info', 'Added to your list. You\'re following each other. ');
 	}
 
 	public function postDelete($username) {

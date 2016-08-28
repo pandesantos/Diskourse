@@ -1,0 +1,322 @@
+/* http://doozypixels.com/bootstrap/itsbeta2/index-variation1.html */
+
+#logo a{
+	background: #e74c3c;
+}
+#features i{
+	color: #e74c3c;
+}
+.social-icons a{
+	color: #e74c3c;
+}
+.social-icons a:hover{
+	color: #bc3e31;
+}
+.form-control:focus {
+  border-color: #e74c3c;
+}
+
+/*
+ * Custom Theme Buttons
+ */
+.btn-theme {
+  color: #ffffff;
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+  font-weight: 700;
+}
+
+.btn-theme:hover,
+.btn-theme:focus,
+.btn-theme:active,
+.btn-theme.active,
+.open .dropdown-toggle.btn-theme {
+  color: #ffffff;
+  background-color: #bc3e31;
+  border-color: #bc3e31;
+}
+
+.btn-theme:active,
+.btn-theme.active,
+.open .dropdown-toggle.btn-theme {
+  background-image: none;
+}
+
+.btn-theme.disabled,
+.btn-theme[disabled],
+fieldset[disabled] .btn-theme,
+.btn-theme.disabled:hover,
+.btn-theme[disabled]:hover,
+fieldset[disabled] .btn-theme:hover,
+.btn-theme.disabled:focus,
+.btn-theme[disabled]:focus,
+fieldset[disabled] .btn-theme:focus,
+.btn-theme.disabled:active,
+.btn-theme[disabled]:active,
+fieldset[disabled] .btn-theme:active,
+.btn-theme.disabled.active,
+.btn-theme[disabled].active,
+fieldset[disabled] .btn-theme.active {
+  background-color: #bc3e31;
+  border-color: #bc3e31;
+}
+
+/*
+body{
+	background: #ecf0f1;
+	padding-top: 0px;
+	color: #2c3e50;
+	font-family: 'Lato', sans-serif;
+	font-weight : 400;
+	border-top-style: solid;
+	border-top-width: 5px;
+}
+h1,h2,h3,h4,h5,h6{
+	color: #34495e;
+	font-family: 'Lato', sans-serif;
+	font-weight: 700;
+}*/
+/* 
+ * Header
+ * Note: Below Pacifico font is only for theme demo purpose
+ */
+#logo{
+	text-align: center;
+}
+#logo a{
+	color: #fff;
+	padding: 45px 20px;
+	font-family: 'Pacifico', cursive;
+	font-size: 32px;
+	font-weight: 400;
+	text-decoration: none;		
+	display: inline-block;
+	margin: 30px 0;
+	text-shadow: 1px 2px rgba(0,0,0,0.3);
+	-webkit-border-radius: 50% 50%;
+ 	-moz-border-radius: 50% 50%;
+	-ms-border-radius: 50% 50%;
+	-o-border-radius: 50% 50%;
+	border-radius: 50% 50%;
+}
+
+/* 
+ * Marketing
+ */
+#marketing-text{
+	text-align: center;
+	
+}
+#marketing-text.alter{
+	margin-bottom: 30px;
+}
+#marketing-text h1{
+	font-size: 32px;
+	margin-bottom:20px;
+}
+#marketing-text p{
+	font-size: 18px;
+	line-height: 24px;
+	padding:0 10px;
+}
+
+/* 
+ * Subscribe
+ */
+#subscribe{
+	margin: 20px 0;
+}
+#subscribe .btn-block{
+	margin-top: 10px;
+}
+.panel-theme{
+	border:0;
+	border-radius: 6px;	
+}
+.panel-theme .panel-heading{ 
+	background: #2c3e50;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 700;
+	padding: 20px 0;
+	border: 0;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}
+.panel-theme .panel-body{
+	padding: 20px 40px 10px;
+	text-align: center;
+}
+/*
+ * Features
+ */
+ 
+#features{
+	overflow: hidden;
+	margin: 20px 0;
+}
+#features i{
+	font-size: 48px;
+}
+#features h2{
+	font-size: 18px;
+	line-height: 24px;
+}
+.feature-box{
+	padding: 15px;
+	text-align: center;
+	border: solid 1px #d4d9dc;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	-ms-border-radius: 5px;	
+	margin-bottom: 20px;
+}
+#features .media{
+	margin-bottom: 20px;
+}
+#features .media>.pull-left{
+	margin-right: 20px;
+	width: 50px;
+}
+/*
+ * Footer
+ */
+footer{
+	margin: 0 0 30px;	
+	text-align: center;
+} 
+.social-text{
+	font-size:16px;
+}
+.social-text span{
+	display: block;
+	width: 150px;
+	margin:0 auto 10px;	
+	border-top: solid 3px #bdc3c7;
+}
+.social-icons{
+	margin-bottom: 20px;
+}
+.social-icons a{
+	font-size: 24px;
+	padding: 5px;
+}
+.social-icons a:hover{
+	text-decoration: none;
+}
+footer small{color:#95a5a6;}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+	#subscribe .btn-block{
+		margin: 0;
+	}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+	#subscribe .btn-block{
+		margin: 0;
+	}
+	#features,#subscribe{
+	margin: 50px 0;
+	}	
+}
+
+@media (min-width: 1200px) {
+	#marketing-text p{
+		padding:0 50px;
+	}
+	#subscribe .btn-block{
+			margin: 0;
+	}
+	#features,#subscribe{
+	margin: 50px 0;
+	}	
+}
+
+/*for home page*/
+/*
+Free App template for Bootstrap 3
+Code snippet by maridlcrmn for Bootsnipp.com
+Follow me on Twitter @maridlcrmn
+Image credits: unsplash.com
+Image placeholders: placemi.com
+*/
+
+
+.mt-100 {
+    margin-top: 100px; 
+}
+.mt-50 {
+    margin-top: 50px; 
+}
+.mb-100 {
+    margin-bottom: 100px;
+}
+
+
+.icon {
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    padding: 7px 8px;
+    border: 2px solid;
+    border-radius: 50%;
+}
+
+.header {
+    padding-top: 50px;
+    overflow: hidden;
+}
+.footer {
+    color: #887;
+    background-color: #eee;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/*.content {
+    position: relative;
+    display: table;
+    width: 100%;
+    min-height: 100vh;
+}*/
+.pull-middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.btn {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.btn-circle {
+    border-radius: 20px;
+}
+
+.input-group input {
+    border: 0;
+    box-shadow: none;
+    padding-right: 30px;
+}
+.input-group input:focus,
+.input-group input:active {
+    outline: 0;
+    box-shadow: none;
+}
+.input-group-btn:last-child>.btn {
+    z-index: 2;
+    margin-left: -18px;   
+    border-radius: 20px;
+}
+
+.phone {
+    position: relative;
+    max-width: 263px;
+    margin: 0 auto;
+    padding: 65px 15px 55px;
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    background-color: #222;
+    box-shadow: 20px 20px 40px #887;
+}

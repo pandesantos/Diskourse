@@ -136,7 +136,32 @@ Route::post('/profile/videos', [
 	'uses' => '\Diskourse\Http\Controllers\ProfileController@postVideos',
 ]);
 
-Route::get('/profile/resources', [
-	'uses' => '\Diskourse\Http\Controllers\ProfileController@getResources',
-	'as'   => 'profile.resources',
-]);
+
+
+Route::get('/studymaterials',[
+	'uses'=> '\Diskourse\Http\Controllers\ResourceController@index',
+	'as'=> 'templates.studymaterials.index',
+	'middleware' => ['guest'],
+	]);
+	
+Route::get('/studymaterials/upload',[
+	'uses'=> '\Diskourse\Http\Controllers\ResourceController@getUpload',
+	'as'=> 'templates.studymaterials.upload',
+	'middleware' => ['guest'],
+	]);
+
+Route::post('/studymaterials/upload',[
+	'uses'=> '\Diskourse\Http\Controllers\ResourceController@postUpload',
+	'middleware' => ['guest'],
+	]);
+
+Route::get('/studymaterials/inventory',[
+	'uses' => '\Diskourse\Http\Controllers\ResourceController@getInventory',
+	'as' => 'templates.studymaterials.inventory',
+	'middleware' => ['guest'],
+	]);
+
+Route::get('/studymaterials/search',[
+	'uses' => '\Diskourse\Http\Controllers\ResourceController@getSearchResults',
+	'as' => 'templates.studymaterials.results',
+	]);

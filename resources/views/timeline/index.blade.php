@@ -35,9 +35,9 @@
             <li>{{ $status->created_at->diffForHumans() }}</li>
 
             @if($status->user->id !==Auth::user()->id)
-            <li><a href="{{ route('status.like', ['statusId'=>$status->id]) }}">Agree</a></li>
+            <li><a href="{{ route('status.like', ['statusId'=>$status->id]) }}">Upvote</a></li>
             @endif
-            <li>{{ $status->likes->count() }} {{ str_plural('Agree', $status->likes->count() )}}</li>
+            <li>{{ $status->likes->count() }} {{ str_plural('Upvote', $status->likes->count() )}}</li>
         </ul>
  
        
@@ -52,9 +52,9 @@
                 <ul class="list-inline">
                     <li>{{ $reply->created_at->diffForHumans() }}</li>
                     @if($reply->user->id !==Auth::user()->id)
-                    <li><a href="{{route('status.like', ['statusId'=>$reply->id]) }}">Agree</a></li>
+                    <li><a href="{{route('status.like', ['statusId'=>$reply->id]) }}">Upvote</a></li>
                     @endif
-                    <li>{{ $reply->likes->count() }} {{ str_plural('Agree', $reply->likes->count() )}}</li>
+                    <li>{{ $reply->likes->count() }} {{ str_plural('Upvote', $reply->likes->count() )}}</li>
                 </ul>
             </div>
         </div>

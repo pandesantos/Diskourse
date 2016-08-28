@@ -13,7 +13,7 @@ class CreateMessagesTable extends Migration
     public function up()
     {
         Schema::create('messages', function(Blueprint $table) {
-            $table->increment('id');
+            $table->increments('id');
             $table->integer('user_id');
             $table->integer('child_id')->nullable();
             $table->integer('parent_id')->nullable();

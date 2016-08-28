@@ -8,21 +8,21 @@
  
         @if(!$friends->count())
 
-		<p>You have no one in the list.</p>
+        <p>You have no one in the list.</p>
 
-		@else
+        @else
 
-		@foreach($friends as $user)
-		@include('user/partials/userblock')
-		@endforeach
+        @foreach($friends as $user)
+        @include('user/partials/userblock')
+        @endforeach
 
-		@endif
+        @endif
                 </div>
                 <div class="col-lg-6">
-                        <h4>Awating users</h4>
+                        <h4>New followers</h4>
  
                         @if(!$requests->count())
-                        <p>You have no incoming requests.</p>
+                        <p>You have no new followers.</p>
 
                         @else
                         @foreach($requests as $user)

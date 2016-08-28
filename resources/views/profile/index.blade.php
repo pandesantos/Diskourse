@@ -3,12 +3,12 @@
 @section('content')
 
 <div class="row">
-	<div class="col-lg-5">
-		<!-- User info and status -->
-		@include('user.partials.userblock')
-		<hr>
+    <div class="col-lg-5">
+        <!-- User info and status -->
+        @include('user.partials.userblock')
+        <hr>
 
-		@if(!$statuses->count())
+        @if(!$statuses->count())
         <p>{{ $user->getFirstNameOrUsername() }} hasn't posted anything, yet. </p>
         @else
         @foreach($statuses as $status)
@@ -22,9 +22,9 @@
         <ul class="list-inline">
             <li>{{ $status->created_at->diffForHumans() }}</li>
             @if($status->user->id !==Auth::user()->id)
-            <li><a href="{{ route('status.like', ['statusId'=>$status->id]) }}">Agree</a></li>
+            <li><a href="{{ route('status.like', ['statusId'=>$status->id]) }}">Upvote</a></li>
             @endif
-            <li>{{ $status->likes->count() }} {{ str_plural('Agree', $status->likes->count() )}}</li>
+            <li>{{ $status->likes->count() }} {{ str_plural('Upvote', $status->likes->count() )}}</li>
 
         </ul>
  
@@ -40,9 +40,9 @@
                 <ul class="list-inline">
                     <li>{{ $reply->created_at->diffForHumans() }}</li>
                     @if($reply->user->id !==Auth::user()->id)
-                    <li><a href="{{route('status.like', ['statusId'=>$reply->id]) }}">Agree</a></li>
+                    <li><a href="{{route('status.like', ['statusId'=>$reply->id]) }}">Upvote</a></li>
                     @endif
-                     <li>{{ $reply->likes->count() }} {{ str_plural('Agree', $reply->likes->count() )}}</li>
+                     <li>{{ $reply->likes->count() }} {{ str_plural('Upvote', $reply->likes->count() )}}</li>
                 </ul>
             </div>
         </div>
@@ -67,41 +67,41 @@
 
         @endif
 
-	</div>
+    </div>
 
-	<div class="col=lg=4 col-lg-offset-3">
-		@if (Auth::user()->hasFriendRequestPending($user))
-		<p>Waiting for {{$user->getNameOrUsername() }} to accept. </p>
-		@elseif(Auth::user()->hasFriendRequestReceived($user))
-		<a href="{{route('friends.accept', ['username'=>$user->username]) }}" class="btn btn-info">Accept the request</a>
-		@elseif(Auth::user()->isFriendsWith($user))
-		<p>{{$user->getNameOrUsername() }} is in your list. </p>
+    <div class="col-lg-4 col-lg-offset-3">
+        @if (Auth::user()->hasFriendRequestPending($user))
+        <p>You are following {{$user->getNameOrUsername() }}</p>
+        @elseif(Auth::user()->hasFriendRequestReceived($user))
+        <a href="{{route('friends.accept', ['username'=>$user->username]) }}" class="btn btn-info">Follow back</a>
+        @elseif(Auth::user()->isFriendsWith($user))
+        <p>{{$user->getNameOrUsername() }} is in your list. </p>
 
         <form action="{{ route('friends.delete', ['username'=>$user->username ]) }}" method="post">
-            <input type="submit" value="Remove from list" class="btn btn-danger">
+            <input type="submit" value="Stop following" class="btn btn-danger">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
         </form>
 
 
-		@elseif(Auth::user()->id!==$user->id)
-		<a href="{{route('friends.add', ['username'=>$user->username]) }}" class="btn btn-success">Add to list</a>
-		@endif 
-		<h4> {{$user->getFirstNameOrUsername() }}'s list- </h4>
+        @elseif(Auth::user()->id!==$user->id)
+        <a href="{{route('friends.add', ['username'=>$user->username]) }}" class="btn btn-success">Follow</a>
+        @endif 
+        <h4> {{$user->getFirstNameOrUsername() }}'s list- </h4>
 
-		@if(!$user->friends()->count())
+        @if(!$user->friends()->count())
 
-		<p>{{ $user->getFirstNameOrUsername() }} has no one in the list yet.</p>
+        <p>{{ $user->getFirstNameOrUsername() }} has no one in the list.</p>
 
-		@else
+        @else
 
-		@foreach($user->friends() as $user)
-		@include('user/partials/userblock')
-		@endforeach
-		
+        @foreach($user->friends() as $user)
+        @include('user/partials/userblock')
+        @endforeach
+        
 
-		@endif
+        @endif
 
-	</div>
+    </div>
     
 </div>
 

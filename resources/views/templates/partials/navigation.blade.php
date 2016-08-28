@@ -27,7 +27,7 @@
                                         placeholder="Enter username or name"/>
                                 </div>
                                
-                                <button type="button" class="btn btn-default">
+                                <button type="submit" class="btn btn-primary">
                                         <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search
                                 </button>
                         </form>
@@ -41,15 +41,17 @@
 
 
                                 @if(Auth::check())
-                                
-                            
                                 <li><a href="{{ route('profile.index', ['username'=>Auth::user()->username]) }}" data-toggle="tooltip" title="Dashboard"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+
                                 <li><a href="#" data-toggle="tooltip" title="Your Stats"><span class="glyphicon glyphicon-stats" aria-hidden="true"></a></li>
+
                                 <li><a href="{{ route('profile.edit') }}" data-toggle="tooltip" title="Update Profile"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
+
                                 <li><a href="{{ route('profile.videos') }}" data-toggle="tooltip" title="Videos"><span class="glyphicon glyphicon-film" aria-hidden="true"></span></a></li>
-                                <li><a href="{{ route('profile.resources') }}" data-toggle="tooltip" title="Resources"><span class="glyphicon glyphicon-book" aria-hidden="true"></span></a></li>
+
                                 <li><a href="#" data-toggle="tooltip" title="Notifications"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span><span class="badge">42</span></a></li>                                
                                 <li><a href="{{ route('message.index') }}" data-toggle="tooltip" title="Messages"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><span class="badge">5</span></a></li>
+                                
                                 <li><a href="{{ route('auth.signout') }}">Sign out <span class="glyphicon glyphicon-off" aria-hidden="true"></span></a></li>
                                 @else
                                 <li><a href="{{ route('auth.signup') }}">Sign up</a></li>

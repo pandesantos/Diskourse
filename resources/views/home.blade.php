@@ -14,15 +14,7 @@
 
     <title>Welcome to Diskourse!</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/landing-page.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+     
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -46,7 +38,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand topnav" href="#">Home</a>
+                <a class="navbar-brand topnav" href="{{route('home')}}">Home</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -64,7 +56,7 @@
                         <a href="{{ route('profile.videos') }}">Videos</a>
                     </li>
                     <li>
-                        <a href="{{ route('profile.resources') }}">Resources</a>
+                        <a href="{{route('templates.studymaterials.index')}}">Studymaterials</a>
                     </li>
                 </ul>
             </div>
@@ -79,7 +71,7 @@
     <div class="intro-header">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12 ">
                     <div class="intro-message">
                         <h1>Diskourse</h1>
                         <h3>It's like virtual home for learners.</h3>
@@ -117,7 +109,7 @@
                     <p class="lead">Connect to millions of education enthusiasts worldwide!</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="" alt="">
+                    <img class="img-responsive" src="{{URL::asset('public/img/indulge.png')}}" alt="">
                 </div>
             </div>
 
@@ -139,7 +131,7 @@
                     <p class="lead">Perhaps, it's the best place to start your Ad business.</p>
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="" alt="">
+                    <img class="img-responsive" src="{{URL::asset('public/img/ipad.png')}}" alt="">
                 </div>
             </div>
 
@@ -161,7 +153,7 @@
                     <p class="lead">Feel free to give suggestions or post queries!</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="" alt="">
+                    <img class="img-responsive" src="{{URL::asset('public/img/contact.png')}}" alt="">
                 </div>
             </div>
 
@@ -223,7 +215,7 @@
                             <a href="#contact">Contact</a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted small">Copyright &copy; Swapidea 2016. All Rights Reserved</p>
+                    <p class="copyright text-muted small">Copyright &copy; Diskourse 2016. All Rights Reserved</p>
                 </div>
             </div>
         </div>
