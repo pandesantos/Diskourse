@@ -21,5 +21,8 @@ class SearchController extends Controller {
 
 		return view('search.results')->with('users', $users);
 
+                /* likewise, for status or other search options, we can create similar parameters and return a view.
+		Don't forget to use the respective models on the "use" section /*
+
 	}
 }
